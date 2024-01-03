@@ -18,6 +18,8 @@ spec:
         currentNamespaceOnly: true
         csi:
           enableGrpcMetrics: false
+          enableCephfsSnapshotter: false
+          enableNFSSnapshotter: false
         resources:
           limits:
             cpu: 500m
