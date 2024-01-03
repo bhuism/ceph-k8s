@@ -54,3 +54,5 @@ argo-cd:
       create: true
     params:
       application.namespaces: "*"
+      server.insecure: true
+
