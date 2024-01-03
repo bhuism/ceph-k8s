@@ -1,0 +1,56 @@
+argo-cd:
+  dex:
+    enabled: false
+  repoServer:
+    metrics:
+      enabled: false
+    env:
+      - name: SSL_CERT_DIR
+        value: "/app/config/tls/"
+  server:
+    metrics:
+      enabled: false
+    env:
+      - name: SSL_CERT_DIR
+        value: "/app/config/tls/"
+    extraArgs:
+      - --insecure
+    config:
+      repositories: |
+        - type: helm
+          name: argo-cd
+          url: https://argoproj.github.io/argo-helm
+    redis:
+      metrics:
+        enabled: false
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      labels: {}
+      path: /
+      pathType: Prefix
+      extraPaths: []
+      hosts:
+        - argocd.ceph.impl.nl
+      tls:
+        - secretName: argocd.ceph.impl.nl
+          hosts:
+            - argocd.ceph.impl.nl
+  applicationSet:
+    metrics:
+      enabled: false
+  notifications:
+    metrics:
+      enabled: false
+  controller:
+    metrics:
+      enabled: false
+  configs:
+    cm:
+      admin.enabled: true
+      application.resourceTrackingMethod: annotation+label
+#      url: https://argocd.ceph.impl.nl
+    rbac:
+      create: true
+    params:
+      application.namespaces: "*"
