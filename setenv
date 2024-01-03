@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+export XDG_CONFIG_HOME=/home/bhuism/workspace/ceph-k8s
+#export TALOSCONFIG=/home/bhuism/workspace/ceph-k8s/clusterconfig/talosconfig
+#export KUBECONFIG=/home/bhuism/workspace/ceph-k8s/kubeconfig

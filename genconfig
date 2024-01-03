@@ -1,0 +1,12 @@
+#!/bin/sh
+
+./setenv
+
+rm -Rf clusterconfig
+talhelper genconfig
+
+talhelper gencommand apply
+#talhelper gencommand upgrade
+#talhelper gencommand upgrade-k8s
+
+
