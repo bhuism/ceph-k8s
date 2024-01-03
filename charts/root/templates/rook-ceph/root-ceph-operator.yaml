@@ -18,6 +18,7 @@ spec:
         currentNamespaceOnly: true
         csi:
           enableGrpcMetrics: false
+          enableLiveness: true
           enableCephfsSnapshotter: false
           enableNFSSnapshotter: false
         resources:
