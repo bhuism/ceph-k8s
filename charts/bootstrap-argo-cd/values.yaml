@@ -48,7 +48,7 @@ argo-cd:
     cm:
       admin.enabled: true
       application.resourceTrackingMethod: annotation+label
-#      url: https://argocd.ceph.impl.nl
+      url: http://argocd.ceph.impl.nl
     rbac:
       create: true
     params:
