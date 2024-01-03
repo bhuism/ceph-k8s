@@ -35,10 +35,6 @@ argo-cd:
       extraPaths: []
       hosts:
         - argocd.ceph.impl.nl
-      tls:
-        - secretName: argocd.ceph.impl.nl
-          hosts:
-            - argocd.ceph.impl.nl
   applicationSet:
     metrics:
       enabled: false
