@@ -7,7 +7,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: argo-cd
+    namespace: argocd
   project: default
   source:
     repoURL: https://github.com/bhuism/ceph-k8s.git
