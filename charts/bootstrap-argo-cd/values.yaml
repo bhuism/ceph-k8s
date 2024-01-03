@@ -24,7 +24,7 @@ argo-cd:
       metrics:
         enabled: false
     ingress:
-      enabled: true
+      enabled: false
       ingressClassName: nginx
       # annotations:
       #   metallb.universe.tf/address-pool: ipaddresspool-ceph-k8s
