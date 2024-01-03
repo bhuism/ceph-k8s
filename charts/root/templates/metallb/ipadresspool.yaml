@@ -1,4 +1,4 @@
-apiVersion: metallb.io
+apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
   name: ipaddresspool-ceph-k8s
@@ -6,5 +6,4 @@ metadata:
 spec:
   addresses:
     - 192.168.1.90-192.168.1.99
-  autoAssign: true
-  avoidBuggyIPs: true
+  autoAssign: false
