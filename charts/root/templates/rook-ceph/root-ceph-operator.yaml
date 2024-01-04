@@ -21,6 +21,10 @@ spec:
           enableLiveness: true
           enableCephfsSnapshotter: false
           enableNFSSnapshotter: false
+          enableRBDSnapshotter: false
+          enableMetadata: true
+          readAffinity:
+            enabled: true
         resources:
           limits:
             cpu: 500m
