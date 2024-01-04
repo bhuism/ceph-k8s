@@ -15,22 +15,20 @@ spec:
     targetRevision: v1.13.1
     helm:
       values: |
-        toolbox:
-          enabled: false
         configOverride: |
           [global]
           osd_pool_default_size = 2
           # [mon]
           # mon_data_avail_warn = 20
-        ingress:
-          dashboard:
-            ingressClassName: nginx
-            host:
-              name: rook.ceph.impl.nl
+        # ingress:
+        #   dashboard:
+        #     ingressClassName: nginx
+        #     host:
+        #       name: rook.ceph.impl.nl
         cephClusterSpec:
           removeOSDsIfOutAndSafeToRemove: true
           mon:
-            count: 3
+            count: 1 # REMOVE
             allowMultiplePerNode: true  # REMOVE
           mgr:
             count: 1 # REMOVE
