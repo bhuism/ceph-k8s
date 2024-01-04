@@ -31,8 +31,9 @@ spec:
           removeOSDsIfOutAndSafeToRemove: true
           mon:
             count: 3
+            allowMultiplePerNode: true  # REMOVE
           mgr:
-            count: 2
+            count: 1 # REMOVE
           dashboard:
             enabled: true
             urlPrefix: /
