@@ -28,8 +28,6 @@ spec:
             host:
               name: rook.ceph.impl.nl
         cephClusterSpec:
-          external:
-            enable: true
           removeOSDsIfOutAndSafeToRemove: true
           mon:
             count: 3
