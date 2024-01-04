@@ -24,7 +24,7 @@ argo-cd:
       metrics:
         enabled: false
     ingress:
-      enabled: true
+      enabled: false # REMOVE
       ingressClassName: nginx
       labels: {}
       path: /
