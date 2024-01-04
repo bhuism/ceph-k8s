@@ -1,37 +1,37 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: ingress-nginx
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: ingress-nginx
-  project: default
-  source:
-    chart: ingress-nginx
-    repoURL: https://kubernetes.github.io/ingress-nginx
-    targetRevision: 4.9.0
-    helm:
-      values: |
-        controller:
-          metrics:
-            enabled: false
-            serviceMonitor:
-              enabled: false
-          service:
-            annotations:
-              metallb.universe.tf/address-pool: ipaddresspool-ceph-k8s
-              metallb.universe.tf/loadBalancerIPs: 192.168.1.90
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true 
-    managedNamespaceMetadata:
-      labels:
-        pod-security.kubernetes.io/enforce: privileged
-        pod-security.kubernetes.io/audit: privileged
-        pod-security.kubernetes.io/warn: privileged
-    syncOptions:
-      - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: ingress-nginx
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: ingress-nginx
+#   project: default
+#   source:
+#     chart: ingress-nginx
+#     repoURL: https://kubernetes.github.io/ingress-nginx
+#     targetRevision: 4.9.0
+#     helm:
+#       values: |
+#         controller:
+#           metrics:
+#             enabled: false
+#             serviceMonitor:
+#               enabled: false
+#           service:
+#             annotations:
+#               metallb.universe.tf/address-pool: ipaddresspool-ceph-k8s
+#               metallb.universe.tf/loadBalancerIPs: 192.168.1.90
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true 
+#     managedNamespaceMetadata:
+#       labels:
+#         pod-security.kubernetes.io/enforce: privileged
+#         pod-security.kubernetes.io/audit: privileged
+#         pod-security.kubernetes.io/warn: privileged
+#     syncOptions:
+#       - CreateNamespace=true
