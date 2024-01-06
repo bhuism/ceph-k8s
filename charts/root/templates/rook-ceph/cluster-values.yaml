@@ -35,6 +35,8 @@ cephClusterSpec:
     urlPrefix: /
     port: 9000
     ssl: false
+  network:
+    provider: host
   storage:
     useAllNodes: false
     useAllDevices: false
@@ -88,7 +90,7 @@ cephBlockPools:
       enableRBDStats: false
     storageClass:
       enabled: true
-      name: ceph-block
+      name: ceph-block-big
       isDefault: true
       reclaimPolicy: Retain
       allowVolumeExpansion: true
