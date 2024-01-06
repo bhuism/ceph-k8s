@@ -81,7 +81,7 @@ cephClusterSpec:
         cpu: "500m"
         memory: "512Mi"
 cephBlockPools:
-  - name: ceph-blockpool
+  - name: ceph-blockpool-big
     spec:
       replicated:
         size: 2
