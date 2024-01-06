@@ -14,24 +14,8 @@ spec:
     repoURL: https://charts.rook.io/release
     targetRevision: v1.13.1
     helm:
-      values: |
-        currentNamespaceOnly: true
-        csi:
-          enableGrpcMetrics: false
-          enableLiveness: true
-          enableCephfsSnapshotter: false
-          enableNFSSnapshotter: false
-          enableRBDSnapshotter: false
-          enableMetadata: true
-          readAffinity:
-            enabled: true
-        resources:
-          limits:
-            cpu: 500m
-            memory: 512Mi
-          requests:
-            cpu: 100m
-            memory: 128Mi
+      valueFiles:
+        - operator-values.yaml
   syncPolicy:
     automated:
       prune: true

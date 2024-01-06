@@ -1,0 +1,35 @@
+currentNamespaceOnly: true
+
+#monitoring:
+#  enabled: true
+
+csi:
+  enableGrpcMetrics: false
+  enableLiveness: true
+  enableCephfsDriver: false
+  enableCephfsSnapshotter: false
+  enableNFSSnapshotter: false
+  enableRBDSnapshotter: false
+  readAffinity:
+    enabled: true
+
+
+nodeSelector:
+  kubernetes.io/hostname: raspi4
+
+tolerations:
+  - key: "node.kubernetes.io/unschedulable"
+    operator: "Exists"
+    effect: "NoSchedule"
+  - key: node-role.kubernetes.io/control-plane
+    operator: "Exists"
+    effect: "NoSchedule"
+
+
+# resources:
+#   limits:
+#     cpu: 500m
+#     memory: 512Mi
+#   requests:
+#     cpu: 100m
+#     memory: 128Mi

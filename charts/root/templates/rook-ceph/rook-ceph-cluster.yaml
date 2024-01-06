@@ -14,70 +14,8 @@ spec:
     repoURL: https://charts.rook.io/release
     targetRevision: v1.13.1
     helm:
-      values: |
-        configOverride: |
-          [global]
-          osd_pool_default_size = 2
-          # [mon]
-          # mon_data_avail_warn = 20
-        # ingress:
-        #   dashboard:
-        #     ingressClassName: nginx
-        #     host:
-        #       name: rook.ceph.impl.nl
-        cephClusterSpec:
-          removeOSDsIfOutAndSafeToRemove: true
-          mon:
-            count: 1 # REMOVE
-            allowMultiplePerNode: true  # REMOVE
-          mgr:
-            count: 1 # REMOVE
-          dashboard:
-            enabled: true
-            urlPrefix: /
-            ssl: false
-          storage:
-            useAllNodes: false
-            useAllDevices: false
-            nodes:
-              - name: node60
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS512GMTE400S_I216680896
-              - name: node61
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS256GMTE400S_H790500043
-          crashCollector:
-            disable: true
-          placement:
-            all:
-              tolerations:
-                - key: "node.kubernetes.io/unschedulable"
-                  operator: "Exists"
-                  effect: "NoSchedule"
-                - key: node-role.kubernetes.io/control-plane
-                  operator: "Exists"
-                  effect: "NoSchedule"
-        cephBlockPoolsVolumeSnapshotClass:
-          enabled: false
-        cephFileSystemVolumeSnapshotClass:
-          enabled: false
-        cephBlockPools:
-          - name: ceph-blockpool
-            spec:
-              replicated:
-                size: 2
-            storageClass:
-              reclaimPolicy: Retain
-              # parameters:
-              #   imageFormat: "2"
-              #   csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
-              #   csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
-              #   csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
-              #   csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
-              #   csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
-              #   csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
-              #   csi.storage.k8s.io/fstype: ext4
-        cephObjectStores: {}
+      valueFiles:
+        - cluster-values.yaml
   syncPolicy:
     automated:
       prune: true

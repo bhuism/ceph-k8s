@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: disk-wipe-alpha
+  name: wipe-rook61 
 spec:
   restartPolicy: Never
-  nodeName: node60
+  nodeName: node61
   containers:
     - name: disk-wipe
       image: ubuntu

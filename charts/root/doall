@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -x
+set -e
+
+kubectl apply -f templates/rook-ceph/namespace.yaml
+sleep 1
+helm upgrade -i -n rook-ceph rook-ceph rook-release/rook-ceph -f templates/rook-ceph/operator-values.yaml
+sleep 5
+helm upgrade -i -n rook-ceph rook-ceph-cluster rook-release/rook-ceph-cluster -f templates/rook-ceph/cluster-values.yaml

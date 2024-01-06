@@ -1,7 +1,10 @@
 #!/bin/sh
 
+set -e
+
 ./setenv
 
+talhelper validate talconfig
 rm -Rf clusterconfig
 talhelper genconfig
 

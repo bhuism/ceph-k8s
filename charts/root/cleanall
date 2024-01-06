@@ -1,0 +1,26 @@
+#!/bin/sh
+
+
+helm -n rook-ceph uninstall rook-ceph
+
+helm -n rook-ceph uninstall rook-ceph-cluster
+
+for CRD in $(kubectl get crd -n rook-ceph | awk '/ceph.rook.io/ {print $1}'); do
+    kubectl get -n rook-ceph "$CRD" -o name | \
+    xargs -I {} kubectl patch -n rook-ceph {} --type merge -p '{"metadata":{"finalizers": []}}'
+done
+
+kubectl api-resources --verbs=list --namespaced -o name \
+  | xargs -n 1 kubectl get --show-kind --ignore-not-found -n rook-ceph
+
+kubectl -n rook-ceph patch configmap rook-ceph-mon-endpoints --type merge -p '{"metadata":{"finalizers": []}}'
+kubectl -n rook-ceph patch secrets rook-ceph-mon --type merge -p '{"metadata":{"finalizers": []}}'
+
+for i in node60 node61 node62 raspi4  ; do kubectl -n rook-ceph  debug node/$i -it --image=debian:stable-slim -- rm -Rfv /host/var/lib/rook ; done
+
+kubectl delete namespace rook-ceph
+
+kubectl apply -f templates/rook-ceph/namespace.yaml
+
+kubectl -n rook-ceph  apply  -f ../../utils/wipe-node60.yaml
+kubectl -n rook-ceph  apply  -f ../../utils/wipe-node61.yaml
