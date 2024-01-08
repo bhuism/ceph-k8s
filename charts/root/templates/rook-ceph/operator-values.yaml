@@ -12,7 +12,7 @@ csi:
   enableRBDSnapshotter: false
   readAffinity:
     enabled: true
-
+  enableDiscoveryDaemon: false
 
 nodeSelector:
   kubernetes.io/hostname: raspi4
