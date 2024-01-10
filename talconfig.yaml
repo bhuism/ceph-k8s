@@ -13,21 +13,26 @@ additionalApiServerCertSans:
   - 127.0.0.1
 nodes:
   - hostname: node60
-    ipAddress: 192.168.1.153
+    ipAddress: 192.168.1.60
     controlPlane: true
     installDisk: /dev/mmcblk0
   - hostname: node61
-    ipAddress: 192.168.1.155
+    ipAddress: 192.168.1.61
     controlPlane: true
     installDisk: /dev/mmcblk0
   - hostname: node62
-    ipAddress: 192.168.1.157
+    ipAddress: 192.168.1.62
     controlPlane: true
     installDisk: /dev/mmcblk0
-  - hostname: raspi4
-    ipAddress: 192.168.1.12
-    controlPlane: true
-    installDisk: /dev/sda
+  - hostname: node63
+    ipAddress: 192.168.1.63
+    controlPlane: false
+    installDisk: /dev/mmcblk0
+  - hostname: node64
+    ipAddress: 192.168.1.64
+    controlPlane: false
+    installDisk: /dev/mmcblk0
+
 controlPlane:
   patches:
     - |-
