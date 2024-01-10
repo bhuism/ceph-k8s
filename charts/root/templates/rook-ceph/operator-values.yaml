@@ -14,9 +14,6 @@ csi:
     enabled: true
   enableDiscoveryDaemon: false
 
-nodeSelector:
-  kubernetes.io/hostname: raspi4
-
 tolerations:
   - key: "node.kubernetes.io/unschedulable"
     operator: "Exists"
