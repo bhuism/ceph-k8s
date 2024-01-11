@@ -41,7 +41,7 @@ spec:
               metrics:
                 enabled: false
             ingress:
-              enabled: false
+              enabled: true
               ingressClassName: nginx
               labels: {}
               path: /
