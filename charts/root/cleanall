@@ -1,6 +1,7 @@
 #!/bin/sh
 
-exit 1
+set -x
+set -e
 
 helm -n rook-ceph uninstall rook-ceph
 
@@ -26,3 +27,7 @@ kubectl apply -f templates/rook-ceph/namespace.yaml
 kubectl -n rook-ceph  apply  -f ../../utils/wipe-node60.yaml
 kubectl -n rook-ceph  apply  -f ../../utils/wipe-node61.yaml
 kubectl -n rook-ceph  apply  -f ../../utils/wipe-node62.yaml
+
+sleep 40
+
+kubectl delete namespace rook-ceph

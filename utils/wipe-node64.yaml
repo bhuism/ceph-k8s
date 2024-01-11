@@ -7,7 +7,7 @@ spec:
   nodeName: node64
   containers:
     - name: disk-wipe
-      image: ubuntu
+      image: debian:stable-slim
       securityContext:
         privileged: true
       command: ["/bin/sh", "-c"]

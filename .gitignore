@@ -1,3 +1,4 @@
 sops
 clusterconfig
 helm
+*~
