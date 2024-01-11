@@ -14,8 +14,40 @@ spec:
     repoURL: https://charts.rook.io/release
     targetRevision: v1.13.1
     helm:
-      valueFiles:
-        - operator-values.yaml
+      valuesObject:
+        currentNamespaceOnly: true
+
+        #monitoring:
+        #  enabled: true
+
+        csi:
+          enableGrpcMetrics: false
+          enableLiveness: true
+          enableCephfsDriver: false
+          enableCephfsSnapshotter: false
+          enableNFSSnapshotter: false
+          enableRBDSnapshotter: false
+          readAffinity:
+            enabled: true
+          enableDiscoveryDaemon: false
+
+        tolerations:
+          - key: "node.kubernetes.io/unschedulable"
+            operator: "Exists"
+            effect: "NoSchedule"
+          - key: node-role.kubernetes.io/control-plane
+            operator: "Exists"
+            effect: "NoSchedule"
+
+
+        # resources:
+        #   limits:
+        #     cpu: 500m
+        #     memory: 512Mi
+        #   requests:
+        #     cpu: 100m
+        #     memory: 128Mi
+
   syncPolicy:
     automated:
       prune: true
