@@ -23,7 +23,7 @@
 #           service:
 #             annotations:
 #               metallb.universe.tf/address-pool: ipaddresspool-ceph-k8s
-#               metallb.universe.tf/loadBalancerIPs: 192.168.1.90
+#               metallb.universe.tf/loadBalancerIPs: 192.168.1.55
 #   syncPolicy:
 #     automated:
 #       prune: true
