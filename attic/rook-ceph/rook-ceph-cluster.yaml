@@ -1,0 +1,113 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rook-ceph-cluster
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rook-ceph
+  project: default
+  source:
+    chart: rook-ceph-cluster
+    repoURL: https://charts.rook.io/release
+    targetRevision: v1.13.1
+    helm:
+      valuesObject:
+        configOverride: |
+          [global]
+          osd_pool_default_size = 2
+          # osd_pool_default_min_size = 2
+          # mon_osd_down_out_interval = 60
+          [mon]
+          mon_data_avail_warn = 20
+          mgr_initial_modules = dashboard restful rook
+          mgr_disabled_modules = nfs prometheus cephadm
+          
+        # ingress:
+        #   dashboard:
+        #     ingressClassName: nginx
+        #     host:
+        #       name: rook.ceph.impl.nl
+
+        toolbox:
+          enabled: true
+
+        monitoring:
+          enabled: false
+          metricsDisabled: true
+
+        cephClusterSpec:
+          removeOSDsIfOutAndSafeToRemove: true
+          mon:
+            count: 3
+          mgr:
+            count: 2
+            modules:
+              - name: pg_autoscaler
+                enabled: true
+              - name: rook
+                enabled: true
+          dashboard:
+            enabled: true
+            ssl: false
+          network:
+            provider: host
+          storage:
+            useAllNodes: false
+            useAllDevices: false
+            nodes:
+              - name: node61
+                devices:
+                  - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
+              - name: node62
+                devices:
+                  - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
+              - name: node60
+                devices:
+                  - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
+          crashCollector:
+            disable: true
+          placement:
+            all:
+              tolerations:
+                - key: "node.kubernetes.io/unschedulable"
+                  operator: "Exists"
+                  effect: "NoSchedule"
+                - key: node-role.kubernetes.io/control-plane
+                  operator: "Exists"
+                  effect: "NoSchedule"
+        cephFileSystems: []
+        cephBlockPoolsVolumeSnapshotClass:
+          enabled: false
+        cephFileSystemVolumeSnapshotClass:
+          enabled: false
+        cephBlockPools:
+          - name: ceph-blockpool-big
+            spec:
+              replicated:
+                size: 2
+              enableRBDStats: false
+            storageClass:
+              enabled: true
+              name: ceph-block-big
+              isDefault: true
+              reclaimPolicy: Retain
+              allowVolumeExpansion: true
+              parameters:
+                imageFormat: "2"
+                csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
+                csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
+                csi.storage.k8s.io/controller-expand-secret-name: rook-csi-rbd-provisioner
+                csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
+                csi.storage.k8s.io/node-stage-secret-name: rook-csi-rbd-node
+                csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
+                csi.storage.k8s.io/fstype: ext4
+        cephObjectStores: []
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true
