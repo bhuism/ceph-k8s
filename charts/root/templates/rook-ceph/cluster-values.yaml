@@ -5,6 +5,8 @@ configOverride: |
   # mon_osd_down_out_interval = 60
   [mon]
   mon_data_avail_warn = 20
+  mgr_initial_modules = dashboard restful rook
+  mgr_disabled_modules = nfs prometheus cephadm
   
 # ingress:
 #   dashboard:
@@ -32,8 +34,6 @@ cephClusterSpec:
         enabled: true
   dashboard:
     enabled: true
-    urlPrefix: /
-    port: 9000
     ssl: false
   network:
     provider: host
@@ -47,7 +47,7 @@ cephClusterSpec:
       - name: node62
         devices:
           - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
-      - name: node64
+      - name: node60
         devices:
           - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
   crashCollector:
@@ -61,7 +61,7 @@ cephClusterSpec:
         - key: node-role.kubernetes.io/control-plane
           operator: "Exists"
           effect: "NoSchedule"
-cephFileSystems: {}
+cephFileSystems: []
 cephBlockPoolsVolumeSnapshotClass:
   enabled: false
 cephFileSystemVolumeSnapshotClass:

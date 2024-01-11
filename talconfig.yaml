@@ -27,11 +27,12 @@ nodes:
   - hostname: node63
     ipAddress: 192.168.1.63
     controlPlane: false
-    installDisk: /dev/mmcblk0
+    installDisk: /dev/nvme0n1
   - hostname: node64
     ipAddress: 192.168.1.64
     controlPlane: false
-    installDisk: /dev/mmcblk0
+    installDisk: /dev/nvme0n1
+  
 
 controlPlane:
   patches:
