@@ -3,6 +3,8 @@
 #set -x
 #set -e
 
+kubectl apply -f templates/rook-ceph/namespace.yaml
+
 helm -n rook-ceph uninstall rook-ceph
 
 helm -n rook-ceph uninstall rook-ceph-cluster

@@ -25,11 +25,11 @@ spec:
           mgr_initial_modules = dashboard restful rook
           mgr_disabled_modules = nfs prometheus cephadm
           
-        # ingress:
-        #   dashboard:
-        #     ingressClassName: nginx
-        #     host:
-        #       name: rook.ceph.impl.nl
+        ingress:
+          dashboard:
+            ingressClassName: nginx
+            host:
+              name: rook.ceph.impl.nl
 
         toolbox:
           enabled: true
