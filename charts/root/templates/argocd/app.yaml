@@ -15,59 +15,58 @@ spec:
     targetRevision: 5.52.1
     helm:
       valuesObject:
-        argo-cd:
-          dex:
+        dex:
+          enabled: false
+        repoServer:
+          metrics:
             enabled: false
-          repoServer:
+          env:
+            - name: SSL_CERT_DIR
+              value: "/app/config/tls/"
+        server:
+          metrics:
+            enabled: false
+          env:
+            - name: SSL_CERT_DIR
+              value: "/app/config/tls/"
+          extraArgs:
+            - --insecure
+          config:
+            repositories: |
+              - type: helm
+                name: argo-cd
+                url: https://argoproj.github.io/argo-helm
+          redis:
             metrics:
               enabled: false
-            env:
-              - name: SSL_CERT_DIR
-                value: "/app/config/tls/"
-          server:
-            metrics:
-              enabled: false
-            env:
-              - name: SSL_CERT_DIR
-                value: "/app/config/tls/"
-            extraArgs:
-              - --insecure
-            config:
-              repositories: |
-                - type: helm
-                  name: argo-cd
-                  url: https://argoproj.github.io/argo-helm
-            redis:
-              metrics:
-                enabled: false
-            ingress:
-              enabled: false
-              ingressClassName: nginx
-              labels: {}
-              path: /
-              pathType: Prefix
-              extraPaths: []
-              hosts:
-                - argocd.ceph.impl.nl
-          applicationSet:
-            metrics:
-              enabled: false
-          notifications:
-            metrics:
-              enabled: false
-          controller:
-            metrics:
-              enabled: false
-          configs:
-            cm:
-              admin.enabled: true
-              application.resourceTrackingMethod: annotation+label
-              url: http://argocd.ceph.impl.nl
-            rbac:
-              create: true
-            params:
-              application.namespaces: "*"
-              server.insecure: true
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+            labels: {}
+            path: /
+            pathType: Prefix
+            extraPaths: []
+            hosts:
+              - argocd.ceph.impl.nl
+        applicationSet:
+          metrics:
+            enabled: false
+        notifications:
+          metrics:
+            enabled: false
+        controller:
+          metrics:
+            enabled: false
+        configs:
+          cm:
+            admin.enabled: true
+            application.resourceTrackingMethod: annotation+label
+            url: http://argocd.ceph.impl.nl
+          rbac:
+            create: true
+          params:
+            application.namespaces: "*"
+            server.insecure: true
   syncPolicy:
     automated:
       prune: true
