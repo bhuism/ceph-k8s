@@ -29,6 +29,9 @@ spec:
             host:
               name: rook.ceph.impl.nl
 
+        monitoring:
+          metricsDisabled: true
+
         toolbox:
           enabled: true
 
