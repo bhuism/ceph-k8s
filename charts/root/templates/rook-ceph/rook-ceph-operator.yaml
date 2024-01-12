@@ -15,10 +15,7 @@ spec:
     targetRevision: v1.13.2
     helm:
       valuesObject:
-        currentNamespaceOnly: true
-
-        #monitoring:
-        #  enabled: true
+        currentNamespaceOnly: false
 
         csi:
           enableGrpcMetrics: false
@@ -38,15 +35,6 @@ spec:
           - key: node-role.kubernetes.io/control-plane
             operator: "Exists"
             effect: "NoSchedule"
-
-
-        # resources:
-        #   limits:
-        #     cpu: 500m
-        #     memory: 512Mi
-        #   requests:
-        #     cpu: 100m
-        #     memory: 128Mi
 
   syncPolicy:
     automated:
