@@ -22,8 +22,6 @@ spec:
           # mon_osd_down_out_interval = 60
           [mon]
           mon_data_avail_warn = 20
-          mgr_initial_modules = dashboard restful rook
-          mgr_disabled_modules = nfs prometheus cephadm
           
         ingress:
           dashboard:
@@ -45,11 +43,24 @@ spec:
                 enabled: true
               - name: rook
                 enabled: true
+              - name: dashboard
+                enabled: true
+              - name: restful
+                enabled: true
+              - name: prometheus
+                enabled: false
+              - name: nfs
+                enabled: false
+              - name: cephadm
+                enabled: false
+
           dashboard:
             enabled: true
             ssl: false
+
           network:
             provider: host
+
           storage:
             useAllNodes: false
             useAllDevices: false
@@ -63,8 +74,10 @@ spec:
               - name: node60
                 devices:
                   - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
+
           crashCollector:
             disable: true
+
           placement:
             all:
               tolerations:
@@ -74,6 +87,7 @@ spec:
                 - key: node-role.kubernetes.io/control-plane
                   operator: "Exists"
                   effect: "NoSchedule"
+
         cephFileSystems: []
         cephBlockPoolsVolumeSnapshotClass:
           enabled: false
