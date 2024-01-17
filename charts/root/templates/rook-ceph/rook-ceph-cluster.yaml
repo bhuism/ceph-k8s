@@ -33,7 +33,7 @@ spec:
           metricsDisabled: true
 
         toolbox:
-          enabled: true
+          enabled: false
 
         cephClusterSpec:
           removeOSDsIfOutAndSafeToRemove: true
