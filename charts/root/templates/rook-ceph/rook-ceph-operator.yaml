@@ -18,6 +18,7 @@ spec:
         currentNamespaceOnly: false
 
         csi:
+          enableCSIHostNetwork: true
           enableRbdDriver: false
           enableGrpcMetrics: false
           enableLiveness: true
@@ -27,7 +28,7 @@ spec:
           enableRBDSnapshotter: false
           readAffinity:
             enabled: true
-          enableDiscoveryDaemon: false
+          enableDiscoveryDaemon: true
 
         tolerations:
           - key: "node.kubernetes.io/unschedulable"
