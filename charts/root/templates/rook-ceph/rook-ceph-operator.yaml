@@ -31,7 +31,7 @@ spec:
           enableDiscoveryDaemon: true
 
         monitoring:
-          enabled: true
+          enabled: false
 
         tolerations:
           - key: "node.kubernetes.io/unschedulable"
