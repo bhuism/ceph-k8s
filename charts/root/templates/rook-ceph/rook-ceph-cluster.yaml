@@ -30,6 +30,7 @@ spec:
               name: rook.ceph.impl.nl
 
         monitoring:
+          enabled: true
           metricsDisabled: true
 
         toolbox:
@@ -51,7 +52,7 @@ spec:
               - name: restful
                 enabled: true
               - name: prometheus
-                enabled: false
+                enabled: true
               - name: nfs
                 enabled: false
               - name: cephadm
