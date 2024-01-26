@@ -28,7 +28,7 @@ spec:
             enabled: true
 
         monitoring:
-          enabled: false
+          enabled: true
 
         tolerations:
           - key: "node.kubernetes.io/unschedulable"
