@@ -56,6 +56,8 @@ spec:
           dashboard:
             enabled: true
             ssl: false
+            prometheusEndpoint: https://192.168.1.63:10250
+            prometheusEndpointSSLVerify: false
 
           network:
             provider: host
