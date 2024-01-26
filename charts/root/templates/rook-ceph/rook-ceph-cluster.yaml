@@ -59,7 +59,6 @@ spec:
                 enabled: false
 
           dashboard:
-            enabled: true
             ssl: false
 
           network:
