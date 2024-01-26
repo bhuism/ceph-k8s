@@ -56,7 +56,7 @@ spec:
           dashboard:
             enabled: true
             ssl: false
-            prometheusEndpoint: https://192.168.1.63:10250
+            prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
             prometheusEndpointSSLVerify: false
 
           network:
