@@ -35,6 +35,10 @@ spec:
             extraPaths: []
             hosts:
               - grafana.ceph.impl.nl
+        prometheus:
+          prometheusSpec:
+            serviceMonitorSelectorNilUsesHelmValues: false
+
   syncPolicy:
     automated:
       prune: true
