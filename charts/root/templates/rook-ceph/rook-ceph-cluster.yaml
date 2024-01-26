@@ -46,11 +46,7 @@ spec:
                 enabled: true
               - name: rook
                 enabled: true
-              - name: dashboard
-                enabled: true
               - name: restful
-                enabled: true
-              - name: prometheus
                 enabled: true
               - name: nfs
                 enabled: false
