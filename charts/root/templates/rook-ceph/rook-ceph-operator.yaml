@@ -18,7 +18,6 @@ spec:
         currentNamespaceOnly: false
 
         csi:
-          enableCSIHostNetwork: true
           enableRbdDriver: false
           enableLiveness: true
           enableCephfsDriver: false
@@ -27,7 +26,6 @@ spec:
           enableRBDSnapshotter: false
           readAffinity:
             enabled: true
-          enableDiscoveryDaemon: true
 
         monitoring:
           enabled: false
