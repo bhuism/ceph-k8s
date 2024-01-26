@@ -20,7 +20,6 @@ spec:
         csi:
           enableCSIHostNetwork: true
           enableRbdDriver: false
-          enableGrpcMetrics: false
           enableLiveness: true
           enableCephfsDriver: false
           enableCephfsSnapshotter: false
