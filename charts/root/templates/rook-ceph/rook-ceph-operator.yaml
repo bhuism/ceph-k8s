@@ -15,20 +15,20 @@ spec:
     targetRevision: v1.13.3
     helm:
       valuesObject:
-        currentNamespaceOnly: "false"
+        currentNamespaceOnly: false
 
         csi:
-          enableRbdDriver: "false"
-          enableLiveness: "true"
-          enableCephfsDriver: "false"
-          enableCephfsSnapshotter: "false"
-          enableNFSSnapshotter: "false"
-          enableRBDSnapshotter: "false"
+          enableRbdDriver: false
+          enableLiveness: true
+          enableCephfsDriver: false
+          enableCephfsSnapshotter: false
+          enableNFSSnapshotter: false
+          enableRBDSnapshotter: false
           readAffinity:
-            enabled: "true"
+            enabled: true
 
         monitoring:
-          enabled: "false"
+          enabled: false
 
         tolerations:
           - key: "node.kubernetes.io/unschedulable"
@@ -40,7 +40,7 @@ spec:
 
   syncPolicy:
     automated:
-      prune: "true"
-      selfHeal: "true"
+      prune: true
+      selfHeal: true
     syncOptions:
       - ServerSideApply=true
