@@ -31,7 +31,6 @@ spec:
 
         monitoring:
           enabled: true
-          metricsDisabled: true
 
         toolbox:
           enabled: true
@@ -59,6 +58,7 @@ spec:
                 enabled: false
 
           dashboard:
+            enabled: true
             ssl: false
 
           network:
