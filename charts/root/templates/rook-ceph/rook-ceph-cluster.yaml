@@ -40,7 +40,7 @@ spec:
           mon:
             count: 3
           mgr:
-            count: 1
+            count: 2
             modules:
               - name: pg_autoscaler
                 enabled: true
