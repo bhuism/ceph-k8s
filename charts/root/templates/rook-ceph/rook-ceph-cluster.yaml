@@ -41,17 +41,17 @@ spec:
             count: 3
           mgr:
             count: 1
-            modules:
-              - name: pg_autoscaler
-                enabled: true
-              - name: rook
-                enabled: true
-              - name: restful
-                enabled: true
-              - name: nfs
-                enabled: false
-              - name: cephadm
-                enabled: false
+            # modules:
+            #   - name: pg_autoscaler
+            #     enabled: true
+            #   - name: rook
+            #     enabled: true
+            #   - name: restful
+            #     enabled: true
+            #   - name: nfs
+            #     enabled: false
+            #   - name: cephadm
+            #     enabled: false
 
           dashboard:
             enabled: true
