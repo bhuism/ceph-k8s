@@ -16,9 +16,9 @@ spec:
     helm:
       valuesObject:
 
-        image:
-          repository: registry.gitlab.onlineterroir.com/ceph/ceph
-          tag: v18.2.1_patched_v1
+        # image:
+        #   repository: registry.gitlab.onlineterroir.com/ceph/ceph
+        #   tag: v18.2.1_patched_v1
 
         currentNamespaceOnly: false
 
