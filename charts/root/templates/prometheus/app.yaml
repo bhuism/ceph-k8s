@@ -27,13 +27,6 @@ spec:
               root_url: https://grafana.ceph.impl.nl
             security:
               disable_brute_force_login_protection: true
-              allow_embedding: true
-            auth.anonymous:
-              enabled: true
-              org_name: Main Org.
-              org_role: Viewer
-              hide_version: true
-
 
           ingress:
             enabled: true
