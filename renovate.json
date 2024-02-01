@@ -8,6 +8,7 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["argo-cd", "kube-prometheus-stack"],
+      "matchUpdateTypes": ["patch", "minor"],
       "automerge": true
     }
   ]
