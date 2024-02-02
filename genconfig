@@ -8,6 +8,7 @@ talhelper validate talconfig
 rm -Rf clusterconfig
 talhelper genconfig
 
+talhelper gencommand apply --extra-flags "--dry-run"
 talhelper gencommand apply
 #talhelper gencommand upgrade
 #talhelper gencommand upgrade-k8s

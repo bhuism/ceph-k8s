@@ -1,8 +1,8 @@
 clusterName: ceph-k8s
-talosVersion: v1.6.1
+talosVersion: v1.6.4
 kubernetesVersion: v1.29.0
 endpoint: https://control.ceph.impl.nl:6443
-allowSchedulingOnMasters: true
+allowSchedulingOnControlPlanes: true
 additionalMachineCertSans:
   - control.ceph.impl.nl
   - jasmine.odee.net
@@ -11,6 +11,19 @@ additionalApiServerCertSans:
   - control.ceph.impl.nl
   - jasmine.odee.net
   - 127.0.0.1
+
+controlPlane:
+  nameservers:
+    - 1.0.0.1
+    - 8.8.4.4
+    - 8.8.8.8
+  
+worker:
+  nameservers:
+    - 1.0.0.1
+    - 8.8.4.4
+    - 8.8.8.8
+
 nodes:
   - hostname: node60
     ipAddress: 192.168.1.60
@@ -36,17 +49,3 @@ nodes:
     ipAddress: 192.168.1.65
     controlPlane: false
     installDisk: /dev/mmcblk0
-  
-
-controlPlane:
-  patches:
-    - |-
-      machine:
-        network:
-          nameservers:
-            - 8.8.4.4
-            - 1.1.1.1
-            - 8.8.8.8
-    - |-
-      cluster:
-        allowSchedulingOnMasters: true
