@@ -22,7 +22,7 @@ spec:
           proxied: false
         txtOwnerId: ceph
         domainFilters:
-          - ceph.impl.nl
+          - impl.nl
   syncPolicy:
     automated:
       prune: true
