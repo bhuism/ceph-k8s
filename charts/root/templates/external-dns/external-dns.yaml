@@ -20,7 +20,7 @@ spec:
           apiToken: "KHpxqF3BvvOOtlTy5DDtMhAJL1inEUO1ercPJb8S"
           email: "meuk@odee.net"
           proxied: true
-        txtOwnerId: impl
+        txtOwnerId: ceph
         domainFilters:
           - ceph.impl.nl
   syncPolicy:
