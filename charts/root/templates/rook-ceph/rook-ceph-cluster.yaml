@@ -67,7 +67,7 @@ spec:
                 enabled: true
 
           dashboard:
-            enabled: true
+            enabled: false
             ssl: false
             prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
             prometheusEndpointSSLVerify: false
