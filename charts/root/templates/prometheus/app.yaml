@@ -44,9 +44,11 @@ spec:
               - secretName: grafana.ceph.impl.nl
                 hosts:
                   - grafana.ceph.impl.nl
+
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false
+
         prometheus-node-exporter:
           prometheus:
             monitor:
