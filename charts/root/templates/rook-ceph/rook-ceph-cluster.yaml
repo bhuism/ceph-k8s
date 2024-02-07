@@ -22,7 +22,7 @@ spec:
           # mon_osd_down_out_interval = 60
           [mon]
           mon_data_avail_warn = 20
-          
+
         ingress:
           dashboard:
             ingressClassName: nginx
@@ -43,7 +43,6 @@ spec:
           enabled: true
 
         cephClusterSpec:
-
           cephVersion:
             image: registry.gitlab.onlineterroir.com/ceph/ceph:v18.2.1_patched_v1
 
@@ -79,15 +78,18 @@ spec:
             useAllNodes: false
             useAllDevices: false
             nodes:
+              - name: node60
+                devices:
+                  - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
               - name: node61
                 devices:
                   - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
               - name: node62
                 devices:
                   - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
-              - name: node60
+              - name: node63
                 devices:
-                  - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
+                  - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
 
           crashCollector:
             disable: true
