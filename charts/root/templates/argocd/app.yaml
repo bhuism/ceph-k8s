@@ -46,16 +46,8 @@ spec:
               external-dns.alpha.kubernetes.io/target: ingress.ceph.impl.nl
               external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
               cert-manager.io/cluster-issuer: letsencrypt-production
-            labels: {}
-            path: /
-            pathType: Prefix
-            extraPaths: []
-            hosts:
-              - argocd.ceph.impl.nl
-            tls:
-              - secretName: argocd.ceph.impl.nl
-                hosts:
-                  - argocd.ceph.impl.nl
+            hostname: argocd.ceph.impl.nl
+            tls: true
         applicationSet:
           metrics:
             enabled: false
