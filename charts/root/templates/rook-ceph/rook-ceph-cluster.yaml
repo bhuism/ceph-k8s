@@ -17,12 +17,7 @@ spec:
       valuesObject:
         configOverride: |
           [global]
-          osd_pool_default_size = 2
-          # osd_pool_default_min_size = 2
-          # mon_osd_down_out_interval = 60
-          [mon]
-          mon_data_avail_warn = 20
-
+          osd_pool_default_size = 3
         ingress:
           dashboard:
             ingressClassName: nginx
@@ -43,9 +38,6 @@ spec:
           enabled: true
 
         cephClusterSpec:
-          # cephVersion:
-          #   image: registry.gitlab.onlineterroir.com/ceph/ceph:v18.2.1_patched_v1
-
           removeOSDsIfOutAndSafeToRemove: true
           mon:
             count: 3
