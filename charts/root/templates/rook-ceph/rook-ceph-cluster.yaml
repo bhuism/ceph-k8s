@@ -82,6 +82,9 @@ spec:
               - name: node63
                 devices:
                   - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
+              - name: node65 # 4t
+                devices:
+                  - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140226
 
           crashCollector:
             disable: true
