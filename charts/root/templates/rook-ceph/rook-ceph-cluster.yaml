@@ -70,9 +70,9 @@ spec:
             useAllNodes: false
             useAllDevices: false
             nodes:
-              - name: node60
-                devices:
-                  - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
+              # - name: node60
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
               - name: node61
                 devices:
                   - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
