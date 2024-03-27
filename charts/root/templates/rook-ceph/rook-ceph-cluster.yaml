@@ -57,6 +57,8 @@ spec:
                 enabled: false
               - name: diskprediction_local
                 enabled: true
+              - name: insights
+                enabled: true
 
           dashboard:
             enabled: true
