@@ -82,9 +82,9 @@ spec:
               - name: node62
                 devices:
                   - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
-              - name: node63
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
+              # - name: node63
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
               - name: node64
                 devices:
                   - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140239
