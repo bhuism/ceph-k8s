@@ -41,7 +41,7 @@ spec:
         cephClusterSpec:
           removeOSDsIfOutAndSafeToRemove: true
           mon:
-            count: 3
+            count: 5
           mgr:
             count: 2
             modules:
