@@ -125,6 +125,13 @@ spec:
               enableRBDStats: false
             storageClass:
               enabled: false
+          - name: ceph-blockpool-single
+            spec:
+              replicated:
+                size: 1
+              enableRBDStats: false
+            storageClass:
+              enabled: false
         cephObjectStores: []
   syncPolicy:
     automated:
