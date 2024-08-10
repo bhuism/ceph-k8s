@@ -21,7 +21,7 @@ spec:
           mon_osd_down_out_interval = 1800
 
           [osd]
-          debug_osd = 10/10
+          debug_osd = 20/20
 
 
         ingress:
