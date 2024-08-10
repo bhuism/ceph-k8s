@@ -19,11 +19,6 @@ spec:
           [global]
           osd_pool_default_size = 3
           mon_osd_down_out_interval = 1800
-
-          [osd]
-          debug_osd = 20/20
-
-
         ingress:
           dashboard:
             ingressClassName: nginx
@@ -98,7 +93,7 @@ spec:
                   - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140226
 
           crashCollector:
-            disable: false
+            disable: true
             daysToRetain: 7
 
           placement:
