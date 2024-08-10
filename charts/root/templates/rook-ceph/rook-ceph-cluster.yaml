@@ -115,14 +115,14 @@ spec:
           - name: ceph-blockpool-big
             spec:
               replicated:
-                size: 1
+                size: 3
               enableRBDStats: false
             storageClass:
               enabled: false
           - name: ceph-blockpool-twice-replicated
             spec:
               replicated:
-                size: 1
+                size: 2
               enableRBDStats: false
             storageClass:
               enabled: false
