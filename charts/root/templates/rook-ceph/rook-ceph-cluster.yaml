@@ -12,13 +12,18 @@ spec:
   source:
     chart: rook-ceph-cluster
     repoURL: https://charts.rook.io/release
-    targetRevision: v1.14.8
+    targetRevision: v1.15.0
     helm:
       valuesObject:
         configOverride: |
           [global]
           osd_pool_default_size = 3
           mon_osd_down_out_interval = 1800
+
+        cephClusterSpec:
+          cephVersion:
+            image: quay.io/ceph/ceph:v18.2.2
+
         ingress:
           dashboard:
             ingressClassName: nginx
@@ -73,18 +78,18 @@ spec:
             useAllNodes: false
             useAllDevices: false
             nodes:
-              - name: node60
-                devices:
-                  - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
+              # - name: node60
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
               - name: node61
                 devices:
                   - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
               - name: node62
                 devices:
                   - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
-              - name: node63
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
+              # - name: node63
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
               - name: node64
                 devices:
                   - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140239
