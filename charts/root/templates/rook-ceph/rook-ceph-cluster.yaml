@@ -20,12 +20,14 @@ spec:
           osd_pool_default_size = 3
           mon_osd_down_out_interval = 1800
 
-        cephClusterSpec:
-          cephVersion:
-            image: quay.io/ceph/ceph:v18.2.2
+        # doesnt work:
+        
+        # cephClusterSpec:
+        #   cephVersion:
+        #     image: quay.io/ceph/ceph:v18.2.2
 
-        cephVersion:
-          image: quay.io/ceph/ceph:v18.2.2
+        # cephVersion:
+        #   image: quay.io/ceph/ceph:v18.2.2
 
         ingress:
           dashboard:
