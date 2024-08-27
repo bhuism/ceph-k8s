@@ -17,7 +17,6 @@ spec:
       valuesObject:
         configOverride: |
           [global]
-          osd_pool_default_size = 3
           mon_osd_down_out_interval = 1800
 
         # doesnt work:
