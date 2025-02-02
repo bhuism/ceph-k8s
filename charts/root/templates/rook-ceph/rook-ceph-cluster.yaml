@@ -87,10 +87,10 @@ spec:
             useAllNodes: false
             useAllDevices: false
             nodes:
-              # extra 500GB
-              - name: node60
-                devices:
-                  - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
+              # # extra 500GB
+              # - name: node60
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_500GB_S5H7NS0N812724P
               - name: node61
                 devices:
                   - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
@@ -98,9 +98,9 @@ spec:
                 devices:
                   - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
               # extra 500G
-              - name: node63
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
+              # - name: node63
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
               - name: node64
                 devices:
                   - name: /dev/disk/by-id/nvme-TS4TMTE250S_I877750037
