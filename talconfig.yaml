@@ -1,6 +1,6 @@
 clusterName: ceph-k8s
-talosVersion: v1.8.3
-kubernetesVersion: v1.29.0
+talosVersion: v1.9.2
+kubernetesVersion: v1.32.0
 endpoint: https://control.ceph.impl.nl:6443
 allowSchedulingOnControlPlanes: true
 additionalMachineCertSans:
@@ -25,10 +25,6 @@ worker:
     - 8.8.8.8
 
 nodes:
-  - hostname: node60
-    ipAddress: 192.168.1.60
-    controlPlane: true
-    installDisk: /dev/mmcblk0
   - hostname: node61
     ipAddress: 192.168.1.61
     controlPlane: true
