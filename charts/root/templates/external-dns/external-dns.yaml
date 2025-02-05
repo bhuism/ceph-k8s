@@ -11,14 +11,14 @@ spec:
   project: default
   source:
     chart: external-dns
-    repoURL: https://charts.bitnami.com/bitnami
+    repoURL: registry-1.docker.io/bitnamicharts
     targetRevision: 8.7.4
     helm:
       valuesObject:
         provider: cloudflare
         cloudflare:
-          apiToken: "KHpxqF3BvvOOtlTy5DDtMhAJL1inEUO1ercPJb8S"
-          email: "meuk@odee.net"
+          apiToken: "BYwoYHyWZh0HojuWRxduO7gH_Ka30nQDgZjYaMtA"
+          email: "bas@appsource.nl"
           proxied: false
         txtOwnerId: ceph
         domainFilters:
