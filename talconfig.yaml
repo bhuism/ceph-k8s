@@ -44,7 +44,23 @@ nodes:
     ipAddress: 192.168.1.64
     controlPlane: true
     installDisk: /dev/mmcblk0
-  - hostname: node65
+  - hostname: node65old
     ipAddress: 192.168.1.95
+    controlPlane: false
+    installDisk: /dev/mmcblk0
+  - hostname: node65nieuw
+    ipAddress: 192.168.1.65
+    controlPlane: false
+    installDisk: /dev/mmcblk0
+  - hostname: node66
+    ipAddress: 192.168.1.66
+    controlPlane: false
+    installDisk: /dev/mmcblk0
+  - hostname: node67
+    ipAddress: 192.168.1.67
+    controlPlane: false
+    installDisk: /dev/mmcblk0
+  - hostname: node68
+    ipAddress: 192.168.1.68
     controlPlane: false
     installDisk: /dev/mmcblk0
