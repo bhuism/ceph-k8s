@@ -104,15 +104,18 @@ spec:
               # - name: node64 oud
               #   devices:
               #     - name: /dev/disk/by-id/nvme-TS4TMTE250S_I877750037
-              - name: node65
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140226
+              # - name: node65 oud
+              #   devices:
+              #     - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140226
               - name: node68
                 devices:
                   - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
               - name: node65nieuw
                 devices:
                   - name: /dev/disk/by-id/nvme-TS4TMTE250S_I877750037
+              - name: node66
+                devices:
+                  - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140226
 
 
 
