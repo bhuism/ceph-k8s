@@ -110,7 +110,7 @@ spec:
               # - name: node68 weg
               #   devices:
               #     - name: /dev/disk/by-id/nvme-TS500GMTE240S_H553520052
-              - name: node65nieuw
+              - name: node65
                 devices:
                   - name: /dev/disk/by-id/nvme-TS4TMTE250S_I877750037
               - name: node66
