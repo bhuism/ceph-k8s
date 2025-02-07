@@ -16,8 +16,8 @@ spec:
     helm:
       valuesObject:
         controller:
-          replicaCount: 3
-          minAvailable: 2
+          # replicaCount: 3
+          # minAvailable: 2
           metrics:
             enabled: false
             serviceMonitor:
