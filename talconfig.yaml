@@ -10,55 +10,28 @@ additionalMachineCertSans:
 additionalApiServerCertSans:
   - jasmine.odee.net
   - 127.0.0.1
-
 controlPlane:
   nameservers:
     - 1.0.0.1
     - 8.8.4.4
     - 8.8.8.8
-  
 worker:
   nameservers:
     - 1.0.0.1
     - 8.8.4.4
     - 8.8.8.8
-
 nodes:
-  # - hostname: node60
-  #   ipAddress: 192.168.1.60
-  #   controlPlane: true
-  #   installDisk: /dev/mmcblk0
-  - hostname: node61
-    ipAddress: 192.168.1.61
-    controlPlane: true
-    installDisk: /dev/mmcblk0
-  - hostname: node62
-    ipAddress: 192.168.1.62
-    controlPlane: true
-    installDisk: /dev/mmcblk0
-#  - hostname: node63old
-#    ipAddress: 192.168.1.93
-#    controlPlane: false
-#    installDisk: /dev/mmcblk0
-  - hostname: node64
-    ipAddress: 192.168.1.64
-    controlPlane: true
-    installDisk: /dev/mmcblk0
- # - hostname: node65old
- #   ipAddress: 192.168.1.95
- #   controlPlane: false
- #   installDisk: /dev/mmcblk0
   - hostname: node65
     ipAddress: 192.168.1.65
-    controlPlane: false
+    controlPlane: true
     installDisk: /dev/mmcblk0
   - hostname: node66
     ipAddress: 192.168.1.66
-    controlPlane: false
+    controlPlane: true
     installDisk: /dev/mmcblk0
   - hostname: node67
     ipAddress: 192.168.1.67
-    controlPlane: false
+    controlPlane: true
     installDisk: /dev/mmcblk0
   - hostname: node68
     ipAddress: 192.168.1.68
