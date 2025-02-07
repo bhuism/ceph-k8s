@@ -26,16 +26,6 @@ spec:
             annotations:
               metallb.universe.tf/address-pool: ipaddresspool-ceph-k8s
               metallb.universe.tf/loadBalancerIPs: 192.168.1.55
-        defaultBackend:
-          enabled: true
-          name: defaultbackend
-          image:
-            registry: europe-west4-docker.pkg.dev
-            image: impl-383520/docker/defaultbackend
-            tag: latest
-            pullPolicy: Always
-            runAsNonRoot: true
-            allowPrivilegeEscalation: false
   syncPolicy:
     automated:
       prune: true
