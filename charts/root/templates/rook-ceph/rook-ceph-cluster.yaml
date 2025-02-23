@@ -48,9 +48,9 @@ spec:
           enabled: true
 
         cephClusterSpec:
-          cephVersion:
-            allowUnsupported: false
-            image: quay.io/ceph/ceph:v18.2.2
+          # cephVersion:
+          #   allowUnsupported: false
+          #   image: quay.io/ceph/ceph:v18.2.2
 
           removeOSDsIfOutAndSafeToRemove: true
           mon:
