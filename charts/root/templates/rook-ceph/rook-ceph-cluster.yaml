@@ -92,7 +92,7 @@ spec:
                 memory: "2Gi"
 
           dashboard:
-            enabled: true
+            enabled: false
             ssl: false
             prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
             prometheusEndpointSSLVerify: false
