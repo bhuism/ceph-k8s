@@ -52,9 +52,6 @@ spec:
           mon:
             count: 3
             allowMultiplePerNode: false
-          osd:
-            deviceClass: nvme
-            allowDeviceClassUpdate: true
           mgr:
             count: 2
             modules:
@@ -104,6 +101,9 @@ spec:
             provider: host
 
           storage:
+            deviceClass: nvme
+            allowDeviceClassUpdate: true
+            allowOsdCrushWeightUpdate: true
             useAllNodes: true
             useAllDevices: true
             deviceFilter: ^nvme
