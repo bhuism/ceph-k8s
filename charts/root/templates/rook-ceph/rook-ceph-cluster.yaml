@@ -64,7 +64,7 @@ spec:
               limits:
                 memory: "2Gi"
               requests:
-               cpu: "1000m"
+                cpu: "1000m"
                 memory: "2Gi"
           mgr:
             count: 2
