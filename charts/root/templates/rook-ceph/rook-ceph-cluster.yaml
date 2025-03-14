@@ -52,20 +52,9 @@ spec:
           mon:
             count: 3
             allowMultiplePerNode: false
-            resources:
-              limits:
-                memory: "1Gi"
-              requests:
-                memory: "1Gi"
           osd:
             deviceClass: nvme
             allowDeviceClassUpdate: true
-            resources:
-              limits:
-                memory: "2Gi"
-              requests:
-                cpu: "1000m"
-                memory: "2Gi"
           mgr:
             count: 2
             modules:
@@ -85,12 +74,25 @@ spec:
                 enabled: true
               - name: insights
                 enabled: true
-            resources:
+          resources:
+            mgr:
               limits:
                 memory: "512Mi"
               requests:
                 cpu: "500m"
                 memory: "512Mi"
+            mon:
+              limits:
+                memory: "1Gi"
+              requests:
+                cpu: "1000m"
+                memory: "1Gi"
+            osd:
+              limits:
+                memory: "2Gi"
+              requests:
+                cpu: "1000m"
+                memory: "2Gi"
 
           dashboard:
             enabled: true
