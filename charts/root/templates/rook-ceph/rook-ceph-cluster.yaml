@@ -33,7 +33,8 @@ spec:
         #         hosts:
         #           - rook.ceph.impl.nl
         monitoring:
-          enabled: true
+          enabled: false
+          metricsDisabled: false
 
         toolbox:
           enabled: true
