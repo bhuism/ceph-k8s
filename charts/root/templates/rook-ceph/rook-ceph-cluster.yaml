@@ -101,7 +101,6 @@ spec:
             provider: host
 
           storage:
-            deviceClass: nvme
             allowDeviceClassUpdate: true
             allowOsdCrushWeightUpdate: true
             useAllNodes: true
