@@ -51,6 +51,21 @@ spec:
           removeOSDsIfOutAndSafeToRemove: true
           mon:
             count: 3
+            allowMultiplePerNode: false
+            resources:
+              limits:
+                memory: "1Gi"
+              requests:
+                memory: "1Gi"
+          osd:
+            deviceClass: nvme
+            allowDeviceClassUpdate: true
+            resources:
+              limits:
+                memory: "2Gi"
+              requests:
+               cpu: "1000m"
+                memory: "2Gi"
           mgr:
             count: 2
             modules:
@@ -70,6 +85,12 @@ spec:
                 enabled: true
               - name: insights
                 enabled: true
+            resources:
+              limits:
+                memory: "512Mi"
+              requests:
+                cpu: "500m"
+                memory: "512Mi"
 
           dashboard:
             enabled: true
@@ -81,21 +102,22 @@ spec:
             provider: host
 
           storage:
-            useAllNodes: false
-            useAllDevices: false
-            nodes:
-              - name: node65
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS4TMTE250S_I877750037
-              - name: node66
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140226
-              - name: node67
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
-              - name: node68
-                devices:
-                  - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
+            useAllNodes: true
+            useAllDevices: true
+            deviceFilter: ^nvme
+            # nodes:
+            #   - name: node65
+            #     devices:
+            #       - name: /dev/disk/by-id/nvme-TS4TMTE250S_I877750037
+            #   - name: node66
+            #     devices:
+            #       - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140226
+            #   - name: node67
+            #     devices:
+            #       - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
+            #   - name: node68
+            #     devices:
+            #       - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
 
           crashCollector:
             disable: true
