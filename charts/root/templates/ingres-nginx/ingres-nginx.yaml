@@ -16,6 +16,8 @@ spec:
     helm:
       valuesObject:
         controller:
+          watchIngressWithoutClass: true
+
           # replicaCount: 3
           # minAvailable: 2
           metrics:
