@@ -57,8 +57,6 @@ spec:
                 enabled: false
               - name: cephadm
                 enabled: false
-              - name: prometheus
-                enabled: false
               - name: dashboard
                 enabled: false
               - name: diskprediction_local
