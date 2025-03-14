@@ -56,8 +56,10 @@ spec:
                 enabled: false
               - name: cephadm
                 enabled: false
-              # - name: prometheus
-              #   enabled: true
+              - name: prometheus
+                enabled: false
+              - name: dashboard
+                enabled: false
               - name: diskprediction_local
                 enabled: true
               - name: insights
@@ -82,9 +84,9 @@ spec:
                 cpu: "1000m"
                 memory: "2Gi"
 
-          # dashboard:
-          #   enabled: false
-          #   ssl: false
+          dashboard:
+            enabled: false
+            ssl: false
           #   prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
           #   prometheusEndpointSSLVerify: false
 
