@@ -19,9 +19,9 @@ spec:
           # replicaCount: 3
           # minAvailable: 2
           metrics:
-            enabled: false
+            enabled: true
             serviceMonitor:
-              enabled: false
+              enabled: true
           service:
             annotations:
               metallb.universe.tf/address-pool: ipaddresspool-ceph-k8s
