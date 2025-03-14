@@ -18,29 +18,20 @@ spec:
         configOverride: |
           [global]
           mon_osd_down_out_interval = 1800
-
-        # doesnt work:
-
-        # cephClusterSpec:
-        #   cephVersion:
-        #     image: quay.io/ceph/ceph:v18.2.2
-
-        # cephVersion:
-        #   image: quay.io/ceph/ceph:v18.2.2
-
-        ingress:
-          dashboard:
-            ingressClassName: nginx
-            annotations:
-              external-dns.alpha.kubernetes.io/target: ingress.ceph.impl.nl
-              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-              cert-manager.io/cluster-issuer: letsencrypt-production
-            host:
-              name: rook.ceph.impl.nl
-            tls:
-              - secretName: rook.ceph.impl.nl
-                hosts:
-                  - rook.ceph.impl.nl
+        
+        # ingress:
+        #   dashboard:
+        #     ingressClassName: nginx
+        #     annotations:
+        #       external-dns.alpha.kubernetes.io/target: ingress.ceph.impl.nl
+        #       external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+        #       cert-manager.io/cluster-issuer: letsencrypt-production
+        #     host:
+        #       name: rook.ceph.impl.nl
+        #     tls:
+        #       - secretName: rook.ceph.impl.nl
+        #         hosts:
+        #           - rook.ceph.impl.nl
         monitoring:
           enabled: true
 
@@ -65,8 +56,8 @@ spec:
                 enabled: false
               - name: cephadm
                 enabled: false
-              - name: prometheus
-                enabled: true
+              # - name: prometheus
+              #   enabled: true
               - name: diskprediction_local
                 enabled: true
               - name: insights
@@ -91,11 +82,11 @@ spec:
                 cpu: "1000m"
                 memory: "2Gi"
 
-          dashboard:
-            enabled: false
-            ssl: false
-            prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
-            prometheusEndpointSSLVerify: false
+          # dashboard:
+          #   enabled: false
+          #   ssl: false
+          #   prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
+          #   prometheusEndpointSSLVerify: false
 
           network:
             provider: host
