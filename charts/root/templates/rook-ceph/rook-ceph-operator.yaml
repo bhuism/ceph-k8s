@@ -16,7 +16,7 @@ spec:
     helm:
       valuesObject:
 
-        logLevel: DEBUG
+        logLevel: WARNING
 
         currentNamespaceOnly: false
 
