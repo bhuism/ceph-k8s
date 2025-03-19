@@ -65,10 +65,10 @@ spec:
           resources:
             mgr:
               limits:
-                memory: "512Mi"
+                memory: "1024Mi"
               requests:
                 cpu: "500m"
-                memory: "512Mi"
+                memory: "1024Mi"
             mon:
               limits:
                 memory: "1Gi"
