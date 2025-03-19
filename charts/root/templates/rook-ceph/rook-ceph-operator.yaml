@@ -16,6 +16,8 @@ spec:
     helm:
       valuesObject:
 
+        logLevel: DEBUG
+
         currentNamespaceOnly: false
 
         csi:
