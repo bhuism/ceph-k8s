@@ -144,6 +144,9 @@ spec:
                   replicated:
                     size: 2
                   name: data0
+              metadataServer:
+                activeCount: 1
+                activeStandby: true
             storageClass:
               enabled: false
         cephBlockPoolsVolumeSnapshotClass:
