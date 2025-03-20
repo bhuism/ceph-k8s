@@ -32,14 +32,11 @@ spec:
               - secretName: rook.ceph.impl.nl
                 hosts:
                   - rook.ceph.impl.nl
-
         monitoring:
           enabled: true
           metricsDisabled: false
-
         toolbox:
           enabled: true
-
         cephClusterSpec:
           removeOSDsIfOutAndSafeToRemove: true
           mon:
@@ -81,16 +78,13 @@ spec:
               requests:
                 cpu: "1000m"
                 memory: "2Gi"
-
           dashboard:
             enabled: true
             ssl: false
             prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
             prometheusEndpointSSLVerify: false
-
           network:
             provider: host
-
           storage:
             allowDeviceClassUpdate: true
             allowOsdCrushWeightUpdate: true
@@ -114,7 +108,6 @@ spec:
           crashCollector:
             disable: true
             daysToRetain: 7
-
           placement:
             all:
               tolerations:
@@ -143,28 +136,13 @@ spec:
           - name: ceph-filesystem
             # see https://github.com/rook/rook/blob/master/Documentation/CRDs/Shared-Filesystem/ceph-filesystem-crd.md#filesystem-settings for available configuration
             spec:
-              metadataPool:
-                replicated:
-                  size: 2
               dataPools:
                 - failureDomain: host
                   replicated:
                     size: 2
-                  # Optional and highly recommended, 'data0' by default, see https://github.com/rook/rook/blob/master/Documentation/CRDs/Shared-Filesystem/ceph-filesystem-crd.md#pools
                   name: data0
-              metadataServer:
-                activeCount: 1
-                activeStandby: true
-                # resources:
-                #   limits:
-                #     memory: "4Gi"
-                #   requests:
-                #     cpu: "1000m"
-                #     memory: "4Gi"
-                priorityClassName: system-cluster-critical
             storageClass:
               enabled: false
-
         cephBlockPoolsVolumeSnapshotClass:
           enabled: false
         cephFileSystemVolumeSnapshotClass:
