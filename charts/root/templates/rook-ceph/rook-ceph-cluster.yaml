@@ -136,6 +136,9 @@ spec:
           - name: ceph-filesystem
             # see https://github.com/rook/rook/blob/master/Documentation/CRDs/Shared-Filesystem/ceph-filesystem-crd.md#filesystem-settings for available configuration
             spec:
+              metadataPool:
+                replicated:
+                  size: 3
               dataPools:
                 - failureDomain: host
                   replicated:

@@ -32,6 +32,8 @@ spec:
           serviceMonitor:
             enabled: true
             interval: 15s
+          # kubeApiBurst:
+          # kubeApiQPS:
 
         monitoring:
           enabled: true
