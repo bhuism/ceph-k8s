@@ -85,8 +85,8 @@ spec:
           dashboard:
             enabled: true
             ssl: false
-            # prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
-            # prometheusEndpointSSLVerify: false
+            prometheusEndpoint: http://prometheus-kube-prometheus-prometheus.prometheus:9090
+            prometheusEndpointSSLVerify: false
 
           network:
             provider: host
