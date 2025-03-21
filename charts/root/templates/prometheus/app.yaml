@@ -45,6 +45,23 @@ spec:
               - secretName: grafana.ceph.impl.nl
                 hosts:
                   - grafana.ceph.impl.nl
+          dashboardProviders:
+            dashboardproviders.yaml:
+              apiVersion: 1
+              providers:
+              - name: 'grafana-dashboards-ceph'
+                orgId: 1
+                folder: 'Ceph'
+                type: file
+                disableDeletion: true
+                editable: true
+                options:
+                  path: /var/lib/grafana/dashboards/grafana-dashboards-ceph
+          dashboards:
+            grafana-dashboards-ceph:
+              ceph-cluster-advanced:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/ceph-cluster-advanced.json
+                token: ''
 
         prometheus:
           prometheusSpec:
