@@ -62,7 +62,54 @@ spec:
               ceph-cluster-advanced:
                 url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/ceph-cluster-advanced.json
                 token: ''
-
+              ceph-cluster:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/ceph-cluster.json
+                token: ''
+              cephfs-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/cephfs-overview.json
+                token: ''
+              host-details:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/host-details.json
+                token: ''
+              hosts-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/hosts-overview.json
+                token: ''
+              multi-cluster-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/multi-cluster-overview.json
+                token: ''
+              osd-device-details:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/osd-device-details.json
+                token: ''
+              osds-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/osds-overview.json
+                token: ''
+              pool-detail:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/pool-detail.json
+                token: ''
+              pool-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/pool-overview.json
+                token: ''
+              radosgw-detail:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/radosgw-detail.json
+                token: ''
+              radosgw-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/radosgw-overview.json
+                token: ''
+              radosgw-sync-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/radosgw-sync-overview.json
+                token: ''
+              rbd-details:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/rbd-details.json
+                token: ''
+              rbd-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/rbd-overview.json
+                token: ''
+              rgw-s3-analytics:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/rgw-s3-analytics.json
+                token: ''
+              smb-overview:
+                url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/smb-overview.json
+                token: ''
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false
