@@ -28,6 +28,7 @@ spec:
               root_url: https://grafana.ceph.impl.nl
             security:
               disable_brute_force_login_protection: true
+              allow_embedding = true
           ingress:
             enabled: true
             ingressClassName: nginx
