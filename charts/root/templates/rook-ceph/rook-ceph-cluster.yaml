@@ -129,7 +129,7 @@ spec:
             spec:
               replicated:
                 size: 2
-              enableRBDStats: false
+              enableRBDStats: true
             storageClass:
               enabled: false
         cephFileSystems:
