@@ -125,13 +125,6 @@ spec:
               enableRBDStats: true
             storageClass:
               enabled: false
-          - name: ceph-blockpool-twice-replicated
-            spec:
-              replicated:
-                size: 2
-              enableRBDStats: true
-            storageClass:
-              enabled: false
         cephFileSystems:
           - name: ceph-filesystem
             # see https://github.com/rook/rook/blob/master/Documentation/CRDs/Shared-Filesystem/ceph-filesystem-crd.md#filesystem-settings for available configuration
