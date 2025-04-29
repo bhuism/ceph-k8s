@@ -90,7 +90,7 @@ spec:
             allowOsdCrushWeightUpdate: true
             useAllNodes: true
             useAllDevices: true
-            deviceFilter: ^nvme|sda
+            deviceFilter: ^nvme|sd
             # nodes:
             #   - name: node65
             #     devices:
