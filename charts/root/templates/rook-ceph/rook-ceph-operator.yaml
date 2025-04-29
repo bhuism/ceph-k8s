@@ -15,8 +15,7 @@ spec:
     targetRevision: v1.17.1
     helm:
       valuesObject:
-
-        logLevel: WARNING
+        logLevel: INFO
 
         currentNamespaceOnly: false
 
