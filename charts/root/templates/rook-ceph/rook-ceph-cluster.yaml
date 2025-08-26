@@ -42,6 +42,7 @@ spec:
             mgr:
               mgr/alerts/smtp_host: "smtp.google.com"
               mgr/alerts/smtp_port: "25"
+              mgr/alerts/smtp_ssl: "false"
               mgr/alerts/smtp_destination: "bhuism@odee.net"
               mgr/alerts/smtp_sender: "bhuism@odee.net"
               mgr/alerts/smtp_from_name: "Rook-Ceph Production Cluster"
