@@ -39,12 +39,12 @@ spec:
           enabled: true
         cephClusterSpec:
           cephConfig:
-              mgr:
-                mgr/alerts/smtp_host: "smtp.google.com"
-                mgr/alerts/smtp_port: 25
-                mgr/alerts/smtp_destination: "bhuism+ceph@odee.net"
-                mgr/alerts/smtp_sender: "bhuism@odee.net"
-                mgr/alerts/smtp_from_name: "Rook-Ceph Production Cluster"
+            mgr:
+              mgr/alerts/smtp_host: "smtp.google.com"
+              mgr/alerts/smtp_port: "25"
+              mgr/alerts/smtp_destination: "bhuism+ceph@odee.net"
+              mgr/alerts/smtp_sender: "bhuism@odee.net"
+              mgr/alerts/smtp_from_name: "Rook-Ceph Production Cluster"
           removeOSDsIfOutAndSafeToRemove: true
           mon:
             count: 3
