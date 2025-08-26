@@ -59,6 +59,8 @@ spec:
                 enabled: true
               - name: insights
                 enabled: true
+              - name: alerts
+                enabled: true
           resources:
             mgr:
               limits:
