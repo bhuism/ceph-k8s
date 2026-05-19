@@ -1,10 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "group:all"],
+  "extends": [
+    "config:recommended",
+    "group:all"
+  ],
   "packageRules": [
     {
-      "matchPaths": ["^charts/.+\\.ya?ml$"],
-      "matchUpdateTypes": ["patch", "minor", "pin", "digest"],
+      "matchPaths": [
+        "^charts/.+\\.ya?ml$"
+      ],
+      "matchUpdateTypes": [
+        "patch",
+        "minor",
+        "pin",
+        "digest"
+      ],
       "automerge": false
     }
   ]
