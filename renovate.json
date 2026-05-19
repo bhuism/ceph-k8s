@@ -1,11 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", "group:all"],
-  "argocd": { "fileMatch": ["charts/.+\\.ya?ml$"] },
   "packageRules": [
     {
+      "matchPaths": ["^charts/.+\\.ya?ml$"],
       "matchUpdateTypes": ["patch", "minor", "pin", "digest"],
-      "automerge": true
+      "automerge": false
     }
   ]
 }
