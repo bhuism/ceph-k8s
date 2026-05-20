@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -vf controlplane.yaml worker.yaml talosconfig
+talosctl --with-secrets ./talsecret.yaml --with-secrets ./talsecret.yaml gen config ceph-k8s https://jasmine.odee.net:587
+
