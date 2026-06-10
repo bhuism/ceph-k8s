@@ -41,3 +41,7 @@ nodes:
     ipAddress: 192.168.1.69
     controlPlane: false
     installDisk: /dev/nvme2n1
+  - hostname: node70
+    ipAddress: 192.168.1.70
+    controlPlane: false
+    installDisk: /dev/nvme0n1
