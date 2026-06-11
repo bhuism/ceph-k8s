@@ -2,3 +2,5 @@ sops
 clusterconfig
 helm
 *~
+.idea
+.junie
