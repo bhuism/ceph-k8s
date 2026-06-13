@@ -128,8 +128,8 @@ spec:
                   - name: nvme2n1
               - name: node70
                 devices:
-                  - name: nvme[0-9]+n[0-9]+(p[0-9]+)?$
-
+                  - name: nvme0n1
+                  - name: nvme2n1
           crashCollector:
             disable: true
             daysToRetain: 7
