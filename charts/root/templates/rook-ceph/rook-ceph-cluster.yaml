@@ -105,22 +105,30 @@ spec:
           storage:
             allowDeviceClassUpdate: true
             allowOsdCrushWeightUpdate: true
-            useAllNodes: true
+            useAllNodes: false
             useAllDevices: false
-            deviceFilter: ^nvme|^sd
-            # nodes:
-            #   - name: node65
-            #     devices:
-            #       - name: /dev/disk/by-id/nvme-TS4TMTE250S_I877750037
-            #   - name: node66
-            #     devices:
-            #       - name: /dev/disk/by-id/nvme-TS4TMTE250S_I262140226
-            #   - name: node67
-            #     devices:
-            #       - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
-            #   - name: node68
-            #     devices:
-            #       - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
+            nodes:
+              - name: node65
+                devices:
+                  - name: nvme0n1
+              - name: node66
+                devices:
+                  - name: nvme0n1
+              - name: node67
+                devices:
+                  - name: sda
+                  - name: sdb
+              - name: node68
+                devices:
+                  - name: nvme0n1
+              - name: node69
+                devices:
+                  - name: nvme0n1
+                  - name: nvme1n1
+                  - name: nvme2n1
+              - name: node70
+                devices:
+                  - name: nvme0n1
 
           crashCollector:
             disable: true
