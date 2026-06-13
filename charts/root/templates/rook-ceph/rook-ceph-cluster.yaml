@@ -109,8 +109,6 @@ spec:
             useAllDevices: false
             nodes:
               - name: node65
-                # devices:
-                #   - name: nvme0n1
               - name: node66
                 devices:
                   - name: nvme0n1
