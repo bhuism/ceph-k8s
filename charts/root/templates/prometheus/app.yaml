@@ -53,7 +53,7 @@ spec:
 
           ingress:
             enabled: true
-            ingressClassName: nginx-internal
+            ingressClassName: nginx
             annotations:
               external-dns.alpha.kubernetes.io/target: ingress.ceph.impl.nl
               external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
