@@ -1,12 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
+    "mergeConfidence:all-badges",
     "config:recommended",
     "group:all"
   ],
   "packageRules": [
     {
-      "matchPaths": [
+      "matchFileNames": [
         "^charts/.+\\.ya?ml$"
       ],
       "matchUpdateTypes": [
@@ -16,6 +17,12 @@
         "digest"
       ],
       "automerge": false
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "dependencyDashboardApproval": true
     }
   ]
 }
