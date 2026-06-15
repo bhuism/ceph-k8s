@@ -18,99 +18,55 @@ spec:
         alertmanager:
           enabled: false
         grafana:
-          enabled: false
-          # adminPassword: killer
-          # defaultDashboardsEnabled: false
-          # grafana.ini:
-          #   analytics:
-          #     check_for_updates: false
-          #     reporting_enabled: false
-          #   server:
-          #     root_url: https://grafana.ceph.impl.nl
-          #   security:
-          #     disable_brute_force_login_protection: true
-          #     allow_embedding: true
-          # ingress:
-          #   enabled: true
-          #   ingressClassName: nginx
-          #   annotations:
-          #     external-dns.alpha.kubernetes.io/target: ingress.ceph.impl.nl
-          #     external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-          #     cert-manager.io/cluster-issuer: letsencrypt-production
-          #   path: /
-          #   pathType: Prefix
-          #   extraPaths: []
-          #   hosts:
-          #     - grafana.ceph.impl.nl
-          #   tls:
-          #     - secretName: grafana.ceph.impl.nl
-          #       hosts:
-          #         - grafana.ceph.impl.nl
-          # dashboardProviders:
-          #   dashboardproviders.yaml:
-          #     apiVersion: 1
-          #     providers:
-          #     - name: 'grafana-dashboards-ceph'
-          #       orgId: 1
-          #       folder: 'Ceph'
-          #       type: file
-          #       disableDeletion: true
-          #       editable: true
-          #       options:
-          #         path: /var/lib/grafana/dashboards/grafana-dashboards-ceph
-          # dashboards:
-          #   grafana-dashboards-ceph:
-          #     ceph-cluster-advanced:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/ceph-cluster-advanced.json
-          #       token: ''
-          #     ceph-cluster:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/ceph-cluster.json
-          #       token: ''
-          #     cephfs-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/cephfs-overview.json
-          #       token: ''
-          #     host-details:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/host-details.json
-          #       token: ''
-          #     hosts-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/hosts-overview.json
-          #       token: ''
-          #     multi-cluster-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/multi-cluster-overview.json
-          #       token: ''
-          #     osd-device-details:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/osd-device-details.json
-          #       token: ''
-          #     osds-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/osds-overview.json
-          #       token: ''
-          #     pool-detail:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/pool-detail.json
-          #       token: ''
-          #     pool-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/pool-overview.json
-          #       token: ''
-          #     radosgw-detail:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/radosgw-detail.json
-          #       token: ''
-          #     radosgw-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/radosgw-overview.json
-          #       token: ''
-          #     radosgw-sync-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/radosgw-sync-overview.json
-          #       token: ''
-          #     rbd-details:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/rbd-details.json
-          #       token: ''
-          #     rbd-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/rbd-overview.json
-          #       token: ''
-          #     rgw-s3-analytics:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/rgw-s3-analytics.json
-          #       token: ''
-          #     smb-overview:
-          #       url: https://raw.githubusercontent.com/ceph/ceph/refs/heads/main/monitoring/ceph-mixin/dashboards_out/smb-overview.json
-          #       token: ''
+          assertNoLeakedSecrets: false
+          adminPassword: killer
+          defaultDashboardsEnabled: false
+          grafana.ini:
+            analytics:
+              check_for_updates: false
+              reporting_enabled: false
+            users:
+              home_page: /dashboards
+            server:
+              root_url: https://grafana.ceph.impl.nl
+            # auth:
+            #   disable_login_form: true
+            #   disable_signout_menu: true
+            security:
+              disable_brute_force_login_protection: true
+              allow_embedding: true
+
+            auth.generic_oauth:
+              name: Keycloak
+              enabled: true
+              allow_sign_up: true
+              client_id: main
+              scopes: openid profile email
+              email_attribute_path: email
+              login_attribute_path: username
+              name_attribute_path: full_name
+              auth_url: https://auth.impl.nl/realms/impl/protocol/openid-connect/auth
+              token_url: https://auth.impl.nl/realms/impl/protocol/openid-connect/token
+              api_url: https://auth.impl.nl/realms/impl/protocol/openid-connect/userinfo
+              use_pkce: true
+              use_refresh_token: true
+
+          ingress:
+            enabled: true
+            ingressClassName: nginx-internal
+            annotations:
+              external-dns.alpha.kubernetes.io/target: ingress.ceph.impl.nl
+              external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+              cert-manager.io/cluster-issuer: letsencrypt-production
+            path: /
+            pathType: Prefix
+            extraPaths: []
+            hosts:
+              - grafana.ceph.impl.nl
+            tls:
+              - secretName: grafana.ceph.impl.nl
+                hosts:
+                  - grafana.ceph.impl.nl
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false
