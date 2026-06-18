@@ -8,7 +8,7 @@ talhelper validate talconfig
 rm -Rf clusterconfig
 talhelper genconfig
 
-talhelper gencommand apply --extra-flags "--dry-run --insecure"
+talhelper gencommand apply --extra-flags "--context ceph-k8s --dry-run --insecure"
 #talhelper gencommand apply
 #talhelper gencommand upgrade
 #talhelper gencommand upgrade-k8s

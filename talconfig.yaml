@@ -1,5 +1,5 @@
 clusterName: ceph-k8s
-talosVersion: v1.9.2
+talosVersion: v1.13.4
 kubernetesVersion: v1.32.0
 endpoint: https://control.ceph.impl.nl:6443
 allowSchedulingOnControlPlanes: true
