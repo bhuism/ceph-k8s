@@ -128,6 +128,9 @@ spec:
                 devices:
                   - name: nvme0n1
                   - name: nvme2n1
+              - name: node71
+                devices:
+                  - name: nvme0n1
           crashCollector:
             disable: true
             daysToRetain: 7

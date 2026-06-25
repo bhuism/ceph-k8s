@@ -1,5 +1,5 @@
 clusterName: ceph-k8s
-talosVersion: v1.13.4
+talosVersion: v1.13.5
 kubernetesVersion: v1.32.0
 endpoint: https://control.ceph.impl.nl:6443
 allowSchedulingOnControlPlanes: true
@@ -43,5 +43,9 @@ nodes:
     installDisk: /dev/nvme2n1
   - hostname: node70
     ipAddress: 192.168.1.70
+    controlPlane: false
+    installDisk: /dev/nvme1n1
+  - hostname: node71
+    ipAddress: 192.168.1.71
     controlPlane: false
     installDisk: /dev/nvme1n1
