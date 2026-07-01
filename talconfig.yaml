@@ -31,11 +31,11 @@ nodes:
     installDisk: /dev/mmcblk0
   - hostname: node67
     ipAddress: 192.168.1.67
-    controlPlane: true
+    controlPlane: false
     installDisk: /dev/mmcblk0
   - hostname: node68
     ipAddress: 192.168.1.68
-    controlPlane: false
+    controlPlane: true
     installDisk: /dev/mmcblk0
   - hostname: node69
     ipAddress: 192.168.1.69
