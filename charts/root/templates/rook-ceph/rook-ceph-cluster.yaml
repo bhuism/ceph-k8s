@@ -122,6 +122,7 @@ spec:
                 devices:
                   - name: nvme0n1
                   - name: nvme2n1
+                  - name: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_4TB_S758NX0W714880B
               - name: node71
                 devices:
                   - name: nvme0n1
