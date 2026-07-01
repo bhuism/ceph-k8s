@@ -115,8 +115,6 @@ spec:
                   - name: sda
                   - name: sdb
               - name: node68
-                devices:
-                  - name: nvme0n1
               - name: node69
                 devices:
                   - name: nvme0n1
