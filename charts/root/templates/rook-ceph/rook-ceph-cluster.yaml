@@ -78,9 +78,9 @@ spec:
                 memory: "1Gi"
             mon:
               limits:
-                memory: "1Gi"
+                memory: "2Gi"
               requests:
-                cpu: "1000m"
+                cpu: "500m"
                 memory: "1Gi"
             osd:
               limits:
@@ -93,7 +93,7 @@ spec:
               limits:
                 memory: "4Gi"
               requests:
-                cpu: "1000m"
+                cpu: "1"
                 memory: "2Gi"
           dashboard:
             enabled: true
