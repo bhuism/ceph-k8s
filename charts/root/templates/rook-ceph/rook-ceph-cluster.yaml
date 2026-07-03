@@ -88,7 +88,7 @@ spec:
                 memory: "4Gi"
               requests:
                 cpu: 1
-                memory: "4Gi"
+                memory: "2Gi"
             mds:
               limits:
                 memory: "4Gi"
