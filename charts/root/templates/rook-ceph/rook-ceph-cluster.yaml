@@ -116,12 +116,11 @@ spec:
                   - name: sdb
               - name: node68
               - name: node69
-                devices:
-                  - name: nvme0n1
               - name: node70
                 devices:
                   - name: /dev/disk/by-id/nvme-TS4TMTE250S_I877750037
                   - name: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_4TB_S758NX0W714880B
+                  - name: /dev/disk/by-id/usb-JMicron_Tech_DD56419883893-0:0
               - name: node71
                 devices:
                   - name: nvme0n1
