@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: node-debugger
 spec:
-  nodeName: node70
+  nodeName: node69
   hostPID: true
   hostNetwork: true
   hostIPC: true

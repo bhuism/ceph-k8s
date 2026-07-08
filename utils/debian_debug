@@ -5,5 +5,5 @@
 
 kubectl --context ceph-k8s create namespace node-debug-ns
 kubectl --context ceph-k8s label namespace node-debug-ns pod-security.kubernetes.io/enforce=privileged
-kubectl --context ceph-k8s debug node/node67 -it --image=ubuntu --profile=sysadmin -n node-debug-ns 
+kubectl --context ceph-k8s debug node/node69 -it --image=ubuntu --profile=sysadmin -n node-debug-ns 
 kubectl --context ceph-k8s delete namespace node-debug-ns
