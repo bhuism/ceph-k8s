@@ -117,7 +117,7 @@ spec:
               - name: node68
               - name: node69
                 devices:
-                  - name: nvme0n1
+                  - name: nvme1n1
               - name: node70
               - name: node70
                 devices:
