@@ -117,7 +117,8 @@ spec:
               - name: node68
               - name: node69
                 devices:
-                  - name: nvme0n1
+                  - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920228
+                  - name: /dev/disk/by-id/nvme-TS2TMTE220S_I039920226
               - name: node70
               - name: node70
                 devices:
