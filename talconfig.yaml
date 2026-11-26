@@ -25,27 +25,90 @@ nodes:
     ipAddress: 192.168.1.65
     controlPlane: true
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+    - interface: end0
+      addresses:
+        - 192.168.1.65/24
+      routes:
+        - network: 0.0.0.0/0
+          gateway: 192.168.1.1
+          metric: 1024
+      mtu: 1500    
   - hostname: node66
     ipAddress: 192.168.1.66
     controlPlane: true
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+    - interface: end0
+      addresses:
+        - 192.168.1.66/24
+      routes:
+        - network: 0.0.0.0/0
+          gateway: 192.168.1.1
+          metric: 1024
+      mtu: 1500    
   - hostname: node67
     ipAddress: 192.168.1.67
     controlPlane: false
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+    - interface: end0
+      addresses:
+        - 192.168.1.67/24
+      routes:
+        - network: 0.0.0.0/0
+          gateway: 192.168.1.1
+          metric: 1024
+      mtu: 1500    
   - hostname: node68
     ipAddress: 192.168.1.68
     controlPlane: true
     installDisk: /dev/mmcblk0
+    networkInterfaces:
+    - interface: end0
+      addresses:
+        - 192.168.1.68/24
+      routes:
+        - network: 0.0.0.0/0
+          gateway: 192.168.1.1
+          metric: 1024
+      mtu: 1500    
   - hostname: node69
     ipAddress: 192.168.1.69
     controlPlane: false
     installDisk: /dev/nvme1n1
+    networkInterfaces:
+    - interface: enp4s0
+      addresses:
+        - 192.168.1.69/24
+      routes:
+        - network: 0.0.0.0/0
+          gateway: 192.168.1.1
+          metric: 1024
+      mtu: 1500    
   - hostname: node70
     ipAddress: 192.168.1.70
     controlPlane: false
     installDisk: /dev/nvme1n1
+    networkInterfaces:
+    - interface: enp4s0
+      addresses:
+        - 192.168.1.70/24
+      routes:
+        - network: 0.0.0.0/0
+          gateway: 192.168.1.1
+          metric: 1024
+      mtu: 1500    
   - hostname: node71
     ipAddress: 192.168.1.71
     controlPlane: false
     installDisk: /dev/nvme1n1
+    networkInterfaces:
+    - interface: enp4s0
+      addresses:
+        - 192.168.1.71/24
+      routes:
+        - network: 0.0.0.0/0
+          gateway: 192.168.1.1
+          metric: 1024
+      mtu: 1500    
