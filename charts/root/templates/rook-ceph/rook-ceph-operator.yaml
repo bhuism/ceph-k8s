@@ -21,9 +21,9 @@ spec:
         currentNamespaceOnly: false
 
         csi:
-          enableRbdDriver: true
+          enableRbdDriver: false
           enableLiveness: true
-          enableCephfsDriver: true
+          enableCephfsDriver: false
           enableCephfsSnapshotter: false
           enableNFSSnapshotter: false
           enableRBDSnapshotter: false
